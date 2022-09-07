@@ -6,15 +6,20 @@ public class ProfileCustomer {
     private String lastName;
     private String email;
     private String password;
+    private String adress;
 
     public ProfileCustomer() {
 
     }
-    public ProfileCustomer(String firstName, String lastName, String email, String password) {
+
+
+    public ProfileCustomer(String firstName, String lastName, String email, String adress, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.adress = adress;
         this.password = password;
+
     }
 
 
@@ -40,6 +45,14 @@ public class ProfileCustomer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
     public String getPassword() {

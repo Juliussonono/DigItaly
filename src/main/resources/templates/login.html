@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login to "My pages"/My account</title>
 </head>
 <body>
+<form th:action="@{/home}" method="post">
+    <input type="button" value="Home"/>
+</form>
+
+<form th:action="@{/cart}" method="post">
+    <input type="button" value="Cart"/>
+</form>
+
+<form th:action="@{/login}" method="post">
+    Username: <input type="text" name="username">
+    Password: <input type="password" name="password">
+    <input type="submit">
+
+    <div>
+    <a href="/registerUser">No account? Register here</a>
+    </div>
+
+
+</form>
 
 </body>
 </html>

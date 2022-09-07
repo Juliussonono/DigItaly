@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+<table style="text-align:left">
+    <tr>
+        <th>Product</th>
+        <th>Brand</th>
+        <th>Price</th>
+
+    </tr>
+    <tr th:each="product : ${products}">
+        <th><a th:href="'/product/' + ${currentPage} + '/' + ${product.id}" th:text="${product.name}"></a></th>
+        <th th:text="${product.brand}"></th>
+        <th th:text="${product.price}"></th>
+    </tr>
+</table>
+<div>
+
+        <span th:if="${showPrev}">
+            <a th:href="'/?page=' + ${currentPage-1}" th:text="Previous"></a>
+        </span>
+
+    <span th:each="page : ${pages}">
+            <span th:if="${currentPage == page}" th:text="${page}"></span>
+            <a th:if="${currentPage != page}" th:href="'/?page=' + ${page}" th:text="${page}"></a>
+        </span>
+
+    <span th:if="${showNext}">
+            <a th:href="'/?page=' + ${currentPage+1}" th:text="Next"></a>
+        </span>
+</div>
+
 
 </body>
 </html>

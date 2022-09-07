@@ -16,7 +16,7 @@ public class DigItalyConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/products", "/product/{page}/{id}", "/add", "/edit/{id}").permitAll()
+                .antMatchers("/", "/home", "/products", "/product/{page}/{id}", "/add", "/edit/{id}", "/cart").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

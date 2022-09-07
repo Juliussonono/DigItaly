@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class DigItalyController {
 
+    /*
     @GetMapping ("/")
     public String home() {
         return "home";
     }
+
+     */
 
     @GetMapping ("/cart")
     public String cart() {

@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register as a new user</title>
 </head>
 <body>
+<form th:action="@{/home}" method="post">
+    <input type="button" value="Home"/>
+</form>
+
+<form th:action="@{/cart}" method="post">
+    <input type="button" value="Cart"/>
+</form>
+
+<h1> Welcome to DigItaly's club!</h1>
+<h4>Please fill in your information below:</h4>
+
+<form action="/registerUser" method="post" th:object="${customer}">
+    Username: <input type="text" name="username" th:field="*{username}">
+    Password: <input type="password" name="password" th:field="*{password}"> <!--add if-statement to this based on verification -->
+    <!-- Verify password: <input type="password" name="password"> -->
+    First name: <input type="text" name="firstName" th:field="*{firstName}">
+    Last name: <input type="text" name="lastName" th:field="*{lastName}">
+    Email: <input type="text" name="email" th:field="*{email}"> <!--add if-statement to this based on verification -->
+    <!--Verify email: <input type="text" name="email"> -->
+
+    <input type="submit" value="Save Details">
+</form>
 
 </body>
 </html>

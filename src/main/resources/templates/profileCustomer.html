@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ProfileCustomer</title>
+</head>
+<body>
+<h1 ProfileCustomer></h1>
+<a href="/AddProfileCustomer">New ProfileCustomer</a>
+    <table style="text-align:left">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+        <tr th:each="customer : ${customers}">
+            <th th:text="${customer.firstName}"></th>
+            <th th:text="${customer.lastName}"></th>
+            <th th:text="${customer.email}"></th>
+        </tr>
+    </table>
+</body>
+</html>

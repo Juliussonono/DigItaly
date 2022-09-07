@@ -6,11 +6,17 @@ public class Product {
     private Double price;
     private Integer id;
 
+    public Product() {}
+
     public Product(String name, String brand, double price, int id) {
         this.name = name;
         this.brand = brand;
         this.price = price;
         this.id = id;
+    }
+
+    public boolean isNew(){
+        return this.id == null;
     }
 
     public String getName() {

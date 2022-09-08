@@ -1,7 +1,7 @@
 package com.example.DigItaly;
 
 public class ProfileCustomer {
-    private Long id;
+    private Integer id;
     private String username;
     private String firstName;
     private String lastName;
@@ -14,15 +14,17 @@ public class ProfileCustomer {
     }
 
 
-    public ProfileCustomer(String firstName, String lastName, String email, String adress, String password) {
+
+
+    public ProfileCustomer(Integer id, String username, String firstName, String lastName, String email, String password, String adress) {
+        this.id = id;
+        this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.adress = adress;
         this.password = password;
-
+        this.adress = adress;
     }
-
 
     public String getFirstName() {
         return firstName;
@@ -70,5 +72,13 @@ public class ProfileCustomer {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

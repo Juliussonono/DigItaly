@@ -48,7 +48,7 @@ public class DigItalyController {
     }
 
     @PostMapping("/registerUser")
-    public String registerUserPost(@ModelAttribute ProfileCustomer customer) {
+    public String registerUserPost(@ModelAttribute ProfileCustomer customer) { //customerRepository must be added as input parameter
         System.out.println(customer.getFirstName());
         System.out.println(customer.getUsername());
 

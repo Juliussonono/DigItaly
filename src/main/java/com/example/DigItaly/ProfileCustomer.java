@@ -2,6 +2,7 @@ package com.example.DigItaly;
 
 public class ProfileCustomer {
     private Long id;
+    private String username;
     private String firstName;
     private String lastName;
     private String email;
@@ -61,5 +62,13 @@ public class ProfileCustomer {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

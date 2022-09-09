@@ -10,7 +10,7 @@ public class Product {
 
     public Product() {}
 
-    public Product(String name, String brand, double price, int id) {
+    public Product(String name, String brand, Double price, Integer id) {
         this.name = name;
         this.brand = brand;
         this.price = price;
@@ -37,19 +37,19 @@ public class Product {
         this.brand = brand;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -55,4 +55,16 @@ public class DigItalyController {
         // customerRepository.add(customer); ---> kunden ska läggas in i customerRepository för att lista alla kunder
         return "registerUser";
     }
+
+    @GetMapping ("/secretEdit")
+    public String addProducts(Model model){
+        Product product = new Product();
+        model.addAttribute("product", product);
+        return "secretEdit";
+    }
+
+    @PostMapping("/secretEdit")
+    public String sendToRepository(@ModelAttribute Product product){
+        return "secretEdit";
+    }
 }

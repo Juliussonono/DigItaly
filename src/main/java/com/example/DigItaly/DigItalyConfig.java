@@ -1,4 +1,4 @@
-package com.example.DigItaly;
+/*package com.example.DigItaly;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,3 +33,4 @@ public class DigItalyConfig extends WebSecurityConfigurerAdapter {
         return manager;
     }
 }
+*/

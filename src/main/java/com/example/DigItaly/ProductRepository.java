@@ -12,9 +12,9 @@ public class ProductRepository {
     public ProductRepository() {
         products = new ArrayList<>();
 
-        for (int i = 1; i <= 22; i++) {
+        /*for (int i = 1; i <= 22; i++) {
             products.add(new Product( "Product " + i,"Brand name " + i, 40 + i, (200+i)));
-        }
+        }*/
     }
 
     public Product getProduct(int id) {

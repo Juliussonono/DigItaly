@@ -1,11 +1,13 @@
 package com.example.DigItaly;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,6 +20,8 @@ public class DigItalyController {
         return "home";
     }
      */
+    @Autowired
+    ProductRepository productRepository;
 
     @GetMapping ("/cart")
     public String cart() {
@@ -60,11 +64,18 @@ public class DigItalyController {
     public String addProducts(Model model){
         Product product = new Product();
         model.addAttribute("product", product);
+        model.addAttribute("products", productRepository);
         return "secretEdit";
     }
 
     @PostMapping("/secretEdit")
-    public String sendToRepository(@ModelAttribute Product product){
-        return "secretEdit";
+    public String sendToRepository(@ModelAttribute Product product, RestTemplate restTemplate){
+        //restTemplate.postForObject("http://localhost:8080", product, Product.class);
+        //restTemplate.put("http://localhost:8080/", product, Product.class);
+        //restTemplate.put("http://localhost:8080/book/" + product.getId(), product, Product.class);
+        productRepository.addProduct(product);
+
+
+        return "redirect:/";
     }
 }

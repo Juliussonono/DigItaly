@@ -29,22 +29,20 @@ public class ProfileCustomerRepository {
     }
 
 
-    public ProfileCustomer addProfileCustomers(ProfileCustomer profileCustomer) {
+    public void addProfileCustomers(ProfileCustomer profileCustomer) {
         ProfileCustomer lastprofilCustomer = profileCustomers.get(profileCustomers.size()-1);
         profileCustomer.setId(lastprofilCustomer.getId()+1);
         profileCustomers.add(profileCustomer);
-        return profileCustomer;
     }
 
 
-    public ProfileCustomer editProfileCustomers(ProfileCustomer profileCustomers) {
+    public void editProfileCustomers(ProfileCustomer profileCustomers) {
         ProfileCustomer profileCustomersToEdit = this.getProfilCustomer(profileCustomers.getId());
         if (profileCustomersToEdit != null) {
             profileCustomersToEdit.setFirstName(profileCustomers.getFirstName());
             profileCustomersToEdit.setLastName(profileCustomers.getLastName());
             profileCustomersToEdit.setEmail(profileCustomers.getEmail());
         }
-        return profileCustomers;
     }
 
 

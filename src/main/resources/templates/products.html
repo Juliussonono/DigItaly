@@ -26,8 +26,14 @@
             <option>1</option>
             <option>2</option>
             <option>3</option>
+            <option>4</option>
+            <option>5</option>
         </select>
-            <button>Köp</button>
+        </td>
+        <td>
+            <form th:action="@{/cart}" method="post">
+                <input type="button" value="Köp"/>
+            </form>
         </td>
 
 

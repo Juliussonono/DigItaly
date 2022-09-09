@@ -69,11 +69,13 @@ public class DigItalyController {
     }
 
     @PostMapping("/secretEdit")
-    public String sendToRepository(@ModelAttribute Product product, RestTemplate restTemplate){
+    public String sendToRepository(@ModelAttribute Product product, @ModelAttribute ProductRepository productRepository, RestTemplate restTemplate){
+
         //restTemplate.postForObject("http://localhost:8080", product, Product.class);
         //restTemplate.put("http://localhost:8080/", product, Product.class);
         //restTemplate.put("http://localhost:8080/book/" + product.getId(), product, Product.class);
         productRepository.addProduct(product);
+
 
 
         return "redirect:/";

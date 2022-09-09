@@ -13,15 +13,15 @@ public class ProductRepository {
     public ProductRepository() {
         products = new ArrayList<>();
         
-        products.add(new Product( "Parmigiano Reggiano", "Michelangelo", 49, 1));
-        products.add(new Product( "Gelato Al Cioccolato", "GROM", 79, 2));
-        products.add(new Product( "Italiensk Chokladglass", "Lejonet & Björnet", 55, 3));
-        products.add(new Product( "Nougat Amaretti", "DigItaly", 39, 4));
+        products.add(new Product( "Parmigiano Reggiano", "Michelangelo", 49.0, 1));
+        products.add(new Product( "Gelato Al Cioccolato", "GROM", 79.0, 2));
+        products.add(new Product( "Italiensk Chokladglass", "Lejonet & Björnet", 55.0, 3));
+        products.add(new Product( "Nougat Amaretti", "DigItaly", 39.0, 4));
 
-        products.add(new Product( "Pasta", "Ambris", 39, 5));
-        products.add(new Product( "Gianduiotti Cioccolato", "Sorini", 119, 6));
-        products.add(new Product( "Vetemjöl", "Caputo", 55, 7));
-        products.add(new Product( "Ferrero Rocher", "DigItaly", 79, 8));
+        products.add(new Product( "Pasta", "Ambris", 39.0, 5));
+        products.add(new Product( "Gianduiotti Cioccolato", "Sorini", 119.0, 6));
+        products.add(new Product( "Vetemjöl", "Caputo", 55.0, 7));
+        products.add(new Product( "Ferrero Rocher", "DigItaly", 79.0, 8));
 
     }
 
@@ -48,11 +48,10 @@ public class ProductRepository {
         return products;
     }
 
-    public Product addProduct(Product product) {
+    public void addProduct(Product product) {
         Product lastProduct = products.get(products.size()-1);
         product.setId(lastProduct.getId()+1);
         products.add(product);
-        return product;
     }
 
     public Product editProduct(Product product) {

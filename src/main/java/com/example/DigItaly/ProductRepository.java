@@ -13,15 +13,15 @@ public class ProductRepository {
     public ProductRepository() {
         products = new ArrayList<>();
         
-        products.add(new Product( "Parmigiano Reggiano", "Michelangelo", 49.00, 1));
-        products.add(new Product( "Gelato Al Cioccolato", "GROM", 79.00, 2));
-        products.add(new Product( "Italiensk Chokladglass", "Lejonet & Björnet", 55.00, 3));
-        products.add(new Product( "Nougat Amaretti", "DigItaly", 39.00, 4));
+        products.add(new Product( "Parmigiano Reggiano", "Michelangelo", 49.00, 1, "id1-parmigiano.jpg"));
+        products.add(new Product( "Gelato Al Cioccolato", "GROM", 79.00, 2,"id2-grom-gelato.jpg"));
+        products.add(new Product( "Italiensk Chokladglass", "Lejonet & Björnet", 55.00, 3,"id3-Lejonet&Björnen.jpg"));
+        products.add(new Product( "Nougat Amaretti", "DigItaly", 39.00, 4,"id4-amaretti-nougat.jpg"));
 
-        products.add(new Product( "Pasta", "Ambris", 39.00, 5));
-        products.add(new Product( "Gianduiotti Cioccolato", "Sorini", 119.00, 6));
-        products.add(new Product( "Vetemjöl", "Caputo", 55.0, 7));
-        products.add(new Product( "Ferrero Rocher", "DigItaly", 79.00, 8));
+        products.add(new Product( "Pasta", "Ambris", 39.00, 5,"id5-ambris-italien.jpg"));
+        products.add(new Product( "Gianduiotti Cioccolato", "Sorini", 119.00, 6,"id6-gianduiotti-.chocolate.jpg"));
+        products.add(new Product( "Vetemjöl", "Caputo", 55.0, 7,"id7-caputo-vetemjol-00-pizzeria-1kg-0.jpg"));
+        products.add(new Product( "Ferrero Rocher", "DigItaly", 79.00, 8,"id8-ferrero-rocher-200-g-2.jpg"));
 
     }
 

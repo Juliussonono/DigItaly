@@ -10,11 +10,12 @@ public class Product {
 
     public Product() {}
 
-    public Product(String name, String brand, Double price, Integer id) {
+    public Product(String name, String brand, Double price, Integer id, String image) {
         this.name = name;
         this.brand = brand;
         this.price = price;
         this.id = id;
+        this.image = image;
     }
 
     public boolean isNew(){

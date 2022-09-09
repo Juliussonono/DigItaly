@@ -9,13 +9,31 @@ import java.util.List;
 public class ProductRepository {
     private List<Product> products;
 
+
     public ProductRepository() {
         products = new ArrayList<>();
+        
+        products.add(new Product( "Parmigiano Reggiano", "Michelangelo", 49, 1));
+        products.add(new Product( "Gelato Al Cioccolato", "GROM", 79, 2));
+        products.add(new Product( "Italiensk Chokladglass", "Lejonet & Björnet", 55, 3));
+        products.add(new Product( "Nougat Amaretti", "DigItaly", 39, 4));
 
-        /*for (int i = 1; i <= 22; i++) {
-            products.add(new Product( "Product " + i,"Brand name " + i, 40 + i, (200+i)));
-        }*/
+        products.add(new Product( "Pasta", "Ambris", 39, 5));
+        products.add(new Product( "Gianduiotti Cioccolato", "Sorini", 119, 6));
+        products.add(new Product( "Vetemjöl", "Caputo", 55, 7));
+        products.add(new Product( "Ferrero Rocher", "DigItaly", 79, 8));
+
     }
+
+
+    /*
+    public ProductRepository() {}
+
+        for (int i = 1; i <= 22; i++) {
+        products.add(new Product( "Product " + i,"Brand name " + i, 40 + i, (200+i)));
+    }
+
+     */
 
     public Product getProduct(int id) {
         for (Product product : products) {

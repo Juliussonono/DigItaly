@@ -4,6 +4,9 @@
     <meta charset="UTF-8"></meta>
     <title>Products</title>
 </head>
+<table style="text-align:right">
+    <td><img src="../Images1/digitaly.jpg" width="1500" height="1000"></td>
+</table>
 <body>
 <h1>Products</h1>
 
@@ -11,22 +14,22 @@
     <tr>
         <th>Name</th>
         <th>Brand</th>
-        <th>ID</th>
         <th>Price</th>
+
     </tr>
     <tr th:each="product : ${products}">
-        <th><a th:href="'/product/' + ${currentPage} + '/' + ${product.id}" th:text="${product.name}"></a></th>
-        <th th:text="${product.brand}"></th>
-        <th th:text="${product.id}"></th>
-        <th th:text="${product.price}"></th>
-        <th th:image src="../Images1/id1-parmigiano.jpg" height="100">
-            <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select>
+        <td><a th:href="'/product/' + ${currentPage} + '/' + ${product.id}" th:text="${product.name}"></a></td>
+        <td th:text="${product.brand}"></td>
+        <td th:text="${product.price}"></td>
+        <td><img th:src="@{/Images1/} + ${product.image}" width="100"></td>
+        <td><select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
             <button>Köp</button>
-       <img src="Images1/id1-parmigiano.jpeg">
+        </td>
+
 
     </tr>
 </table>

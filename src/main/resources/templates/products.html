@@ -11,7 +11,24 @@
 <body>
 <h1>Products</h1>
 
-<table style="text-align:left">
+
+<div th:each="product : ${products}">
+    <p><a th:href="'/product/' + ${currentPage} + '/' + ${product.id}" th:text="${product.name}"></a></p>
+    <p th:text="${product.brand}"></p>
+    <p th:text="${product.price}"></p>
+    <p><img th:src="@{/Images1/} + ${product.image}" width="100"></p>
+    <p><select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select></p>
+
+</div>
+
+
+<!--<table style="text-align:left">
     <tr>
         <th>Name</th>
         <th>Brand</th>
@@ -40,6 +57,7 @@
 
     </tr>
 </table>
+-->
 <div>
 
         <span th:if="${showPrev}">

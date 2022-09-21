@@ -1,9 +1,10 @@
 package com.example.DigItaly;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
-import java.util.List;
+
 @Service
-public class ProfileCustomerRepository {
+public class CustomerRepository {
+
+    /*
     private List<ProfileCustomer> profileCustomers;
     public ProfileCustomerRepository() {
 
@@ -51,5 +52,5 @@ public class ProfileCustomerRepository {
         if (profileCustomersToDelete != null) {
             profileCustomers.remove(profileCustomersToDelete);
         }
-    }
+    }*/
 }

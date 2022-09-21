@@ -6,10 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.client.RestTemplate;
-
-import javax.servlet.http.HttpSession;
 
 @Controller
 public class DigItalyController {
@@ -24,7 +20,7 @@ public class DigItalyController {
     ProductRepository productRepository;
 
     @Autowired
-    ProfileCustomerRepository customerRepository;
+    CustomerRepository customerRepository;
 
     @GetMapping ("/cart")
     public String cart() {
@@ -48,14 +44,14 @@ public class DigItalyController {
 
     @GetMapping ("/registerUser")
     public String registerUser(Model model) {
-        ProfileCustomer customer = new ProfileCustomer();
+        Customer customer = new Customer();
         model.addAttribute("customer", customer);
 
         return "registerUser";
     }
 
     @PostMapping("/registerUser")
-    public String registerUserPost(@ModelAttribute ProfileCustomer customer) { //customerRepository must be added as input parameter
+    public String registerUserPost(@ModelAttribute Customer customer) { //customerRepository must be added as input parameter
         customerRepository.addProfileCustomers(customer);
         System.out.println(customer.getFirstName());
         System.out.println(customer.getUsername());

@@ -1,6 +1,6 @@
 package com.example.DigItaly;
 
-public class ProfileCustomer {
+public class Customer {
     private Integer id;
     private String username;
     private String firstName;
@@ -9,14 +9,14 @@ public class ProfileCustomer {
     private String password;
     private String adress;
 
-    public ProfileCustomer() {
+    public Customer() {
 
     }
 
 
 
 
-    public ProfileCustomer(Integer id, String username, String firstName, String lastName, String email, String password, String adress) {
+    public Customer(Integer id, String username, String firstName, String lastName, String email, String password, String adress) {
         this.id = id;
         this.username = username;
         this.firstName = firstName;

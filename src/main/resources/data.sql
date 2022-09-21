@@ -12,3 +12,6 @@ INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Gianduiotti Cioccolato'
 INSERT INTO product (NAME, BRAND, PRICE, IMAGE) VALUES('Vetemjöl', 'Caputo', 55,'id7-caputo-vetemjol-00-pizzeria-1kg-0.jpg');
 
 INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Ferrero Rocher', 'DigItaly', 79,'id8-ferrero-rocher-200-g-2.jpg');
+
+
+insert into customer (username, first_name, last_name, email, password, address) values ('demoUser', 'Giorgio','Italiano', 'email@email.com','123','stockholm');

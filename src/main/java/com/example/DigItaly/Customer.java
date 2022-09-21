@@ -1,13 +1,20 @@
 package com.example.DigItaly;
 
+import javax.persistence.*;
+
+@Entity
 public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String username;
+    @Column(name="FIRST_NAME")
     private String firstName;
+    @Column(name="LAST_NAME")
     private String lastName;
     private String email;
     private String password;
-    private String adress;
+    private String address;
 
     public Customer() {
 
@@ -23,7 +30,7 @@ public class Customer {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.adress = adress;
+        this.address = adress;
     }
 
     public String getFirstName() {
@@ -50,12 +57,12 @@ public class Customer {
         this.email = email;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getPassword() {

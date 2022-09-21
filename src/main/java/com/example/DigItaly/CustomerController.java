@@ -14,7 +14,7 @@ import java.util.List;
 public class CustomerController {
 
     @Autowired
-    private CustomerRepository repository;
+    private CustomerRepository customerRepository;
 
     @GetMapping("/profileCustomer")
     public String profileCustomer(Model model) {

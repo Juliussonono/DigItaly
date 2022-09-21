@@ -1,8 +1,12 @@
 package com.example.DigItaly;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class CustomerRepository {
+public interface CustomerRepository extends CrudRepository<Customer,Integer> {
+    List<Customer> findAll();
 
     /*
     private List<ProfileCustomer> profileCustomers;

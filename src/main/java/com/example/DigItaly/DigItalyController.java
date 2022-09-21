@@ -52,9 +52,7 @@ public class DigItalyController {
 
     @PostMapping("/registerUser")
     public String registerUserPost(@ModelAttribute Customer customer) { //customerRepository must be added as input parameter
-        customerRepository.addProfileCustomers(customer);
-        System.out.println(customer.getFirstName());
-        System.out.println(customer.getUsername());
+        customerRepository.save(customer);
 
         // customerRepository.add(customer); ---> kunden ska läggas in i customerRepository för att lista alla kunder
         return "redirect:/login";

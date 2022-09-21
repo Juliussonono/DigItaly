@@ -1,12 +1,21 @@
 package com.example.DigItaly;
 
+import javax.persistence.*;
+
+@Entity
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String name;
     private String brand;
     private Double price;
-    private Integer id;
+
 
     private String image;
+
+
 
     public Product() {}
 

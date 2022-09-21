@@ -13,8 +13,9 @@ public class DigItalyApplication {
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
 		return builder.build();
 	}
-	public static void main(String[] args) {
-		SpringApplication.run(DigItalyApplication.class, args);
+
+
+	public static void main(String[] args) {SpringApplication.run(DigItalyApplication.class, args);
 	}
 
 }

@@ -23,6 +23,9 @@ public class DigItalyController {
     @Autowired
     ProductRepository productRepository;
 
+    @Autowired
+    ProfileCustomerRepository customerRepository;
+
     @GetMapping ("/cart")
     public String cart() {
         return "cart";
@@ -53,28 +56,25 @@ public class DigItalyController {
 
     @PostMapping("/registerUser")
     public String registerUserPost(@ModelAttribute ProfileCustomer customer) { //customerRepository must be added as input parameter
+        customerRepository.addProfileCustomers(customer);
         System.out.println(customer.getFirstName());
         System.out.println(customer.getUsername());
 
         // customerRepository.add(customer); ---> kunden ska läggas in i customerRepository för att lista alla kunder
-        return "registerUser";
+        return "redirect:/login";
     }
 
     @GetMapping ("/secretEdit")
     public String addProducts(Model model){
         Product product = new Product();
         model.addAttribute("product", product);
-        model.addAttribute("products", productRepository);
         return "secretEdit";
     }
 
     @PostMapping("/secretEdit")
-    public String sendToRepository(@ModelAttribute Product product, RestTemplate restTemplate){
-        //restTemplate.postForObject("http://localhost:8080", product, Product.class);
-        //restTemplate.put("http://localhost:8080/", product, Product.class);
-        //restTemplate.put("http://localhost:8080/book/" + product.getId(), product, Product.class);
-        productRepository.addProduct(product);
+    public String sendToRepository(@ModelAttribute Product product){
 
+        productRepository.save(product);
 
         return "redirect:/";
     }

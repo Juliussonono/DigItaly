@@ -74,7 +74,7 @@ public class DigItalyController {
     @PostMapping("/secretEdit")
     public String sendToRepository(@ModelAttribute Product product){
 
-        productRepository.addProduct(product);
+        productRepository.save(product);
 
         return "redirect:/";
     }

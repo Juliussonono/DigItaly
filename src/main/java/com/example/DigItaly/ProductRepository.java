@@ -1,15 +1,17 @@
 package com.example.DigItaly;
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ProductRepository {
-    private List<Product> products;
+public interface ProductRepository extends CrudRepository<Product, Integer> {
 
+     List<Product> findAll();
 
+/*
     public ProductRepository() {
         products = new ArrayList<>();
         
@@ -25,6 +27,8 @@ public class ProductRepository {
 
     }
 
+ */
+
 
     /*
     public ProductRepository() {}
@@ -35,6 +39,7 @@ public class ProductRepository {
 
      */
 
+    /*
     public Product getProduct(int id) {
         for (Product product : products) {
             if (product.getId() ==id) {
@@ -71,4 +76,5 @@ public class ProductRepository {
             products.remove(productToDelete);
         }
     }
+    */
 }

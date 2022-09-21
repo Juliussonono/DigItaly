@@ -32,7 +32,7 @@ public class ProductController {
 
     @GetMapping("/product/{page}/{id}")
     public String product(Model model, @PathVariable Integer page, @PathVariable Integer id) {
-        Product product = productRepository.getProduct(id);
+        Product product = productRepository.findById(id).orElse(null);
         model.addAttribute("page", page);
         model.addAttribute("product", product);
 
@@ -48,7 +48,7 @@ public class ProductController {
     }
 
     private List<Product> getPage(int page) {
-        List<Product> products = productRepository.getProducts();
+        List<Product> products = productRepository.findAll();
         int from = Math.max(0,page* ProductController.PAGE_SIZE);
         int to = Math.min(products.size(),(page+1)* ProductController.PAGE_SIZE);
 
@@ -56,7 +56,7 @@ public class ProductController {
     }
 
     private int numberOfPages() {
-        List<Product> products = productRepository.getProducts();
+        List<Product> products = productRepository.findAll();
         return (int)Math.ceil((double) products.size() / ProductController.PAGE_SIZE);
     }
 
@@ -66,20 +66,21 @@ public class ProductController {
         return "form";
     }
 
-    @PostMapping("/save")
-    public String set(@ModelAttribute Product product) {
+    @PostMapping("/save/{id}")
+    public String set(@ModelAttribute Product product, @PathVariable Integer id) {
         if (product.isNew()) {
-            productRepository.addProduct(product);
+            productRepository.save(product);
         }
         else {
-            productRepository.editProduct(product);
+            product.setId(id);
+            productRepository.save(product);
         }
         return "redirect:/";
     }
 
     @GetMapping("/edit/{id}")
     public String edit(Model model, @PathVariable Integer id) {
-        Product product = productRepository.getProduct(id);
+        Product product = productRepository.findById(id).orElse(null);
         model.addAttribute(product);
         return "form";
     }

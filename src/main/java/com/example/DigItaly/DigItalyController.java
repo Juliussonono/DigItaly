@@ -14,18 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class DigItalyController {
 
-    /* // Now products is the default home page
-    @GetMapping ("/")
-    public String home() {
-        return "home";
-    }
-     */
     @Autowired
     ProductRepository productRepository;
 
     @Autowired
     CustomerRepository customerRepository;
-
 
     @PostMapping ("/cart/{id}")
     public String cart(Model model, @PathVariable Integer id, HttpSession session) {

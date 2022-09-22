@@ -13,7 +13,6 @@ public class Product {
     private Double price;
     private String image;
 
-
     public Product() {}
 
     public Product(String name, String brand, Double price, Integer id, String image) {

@@ -8,7 +8,7 @@
 <table style="text-align:right">
     <td><img src="../Images1/digitaly.jpg" width="1500" height="1000"></td>
 </table>
-<body>
+<body style="text-align:center">
 <h1>Products</h1>
 
 <table style="text-align:left">
@@ -16,14 +16,13 @@
         <th>Name</th>
         <th>Brand</th>
         <th>Price</th>
-
     </tr>
     <tr th:each="product : ${products}">
         <td><a th:href="'/product/' + ${currentPage} + '/' + ${product.id}" th:text="${product.name}"></a></td>
         <td th:text="${product.brand}"></td>
         <td th:text="${product.price}"></td>
         <td><img th:src="@{/Images1/} + ${product.image}" width="100"></td>
-        <td><select>
+        <td><select name = "Quantity">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -32,8 +31,8 @@
         </select>
         </td>
         <td>
-            <form th:action="@{/cart}" method="post">
-                <input type="button" value="Köp"/>
+            <form th:action="'/cart/' + ${product.id}" method="post">
+                <input type="submit" value="Cart"/>
             </form>
         </td>
 

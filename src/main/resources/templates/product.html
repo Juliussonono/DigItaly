@@ -9,9 +9,6 @@
 <div>
   <p><a th:href="'/?page=' + ${page}">Back to Products</a></p>
 </div>
-<div>
-  <p><a th:href="'/edit/' + ${product.id}">Edit product</a></p>
-</div>
 <table>
   <tr>
     <th>Name</th>
@@ -26,8 +23,8 @@
     <th th:text="${product.price}"></th>
   </tr>
   <tr>
-    <form th:action="@{/cart}" method="post">
-      <input type="button" value="Cart"/>
+    <form th:action="'/cart/' + ${product.id}" method="post">
+      <input type="submit" value="Cart"/>
     </form>
   </tr>
 </table>

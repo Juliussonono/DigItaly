@@ -32,7 +32,6 @@ class DigItalyApplicationTests {
                 )
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(MockMvcResultMatchers.content().string(containsString("Parmigiano Reggiano")));
-
     }
 
 }

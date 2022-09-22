@@ -9,30 +9,32 @@
     <td><img src="../Images1/digitaly.jpg" width="1500" height="1000"></td>
 </table>
 <body>
-<a th:href="@{/login}" >
-    <button>Log In </button>
+<a th:href="@{/login}">
+    <button>Log In</button>
 </a>
-<a th:href="@{/register}" >
-    <button>Register New Account </button>
+<a th:href="@{/register}">
+    <button>Register New Account</button>
 </a>
 <h1>Products</h1>
-
 
 <div th:each="product : ${products}">
     <p><a th:href="'/product/' + ${currentPage} + '/' + ${product.id}" th:text="${product.name}"></a></p>
     <p th:text="${product.brand}"></p>
     <p th:text="${product.price}"></p>
     <p><img th:src="@{/Images1/} + ${product.image}" width="100"></p>
-    <p><select>
+    <p select name="Quantity"><select>
         <option>1</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
         <option>5</option>
     </select></p>
-
+    <td>
+        <form th:action="'/cart/' + ${product.id}" method="post">
+            <input type="submit" value="Cart"/>
+        </form>
+    </td>
 </div>
-
 
 <!--<table style="text-align:left">
     <tr>
@@ -46,7 +48,7 @@
         <td th:text="${product.brand}"></td>
         <td th:text="${product.price}"></td>
         <td><img th:src="@{/Images1/} + ${product.image}" width="100"></td>
-        <td><select>
+        <td><select name = "Quantity">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -55,29 +57,26 @@
         </select>
         </td>
         <td>
-            <form th:action="@{/cart}" method="post">
-                <input type="button" value="Köp"/>
+            <form th:action="'/cart/' + ${product.id}" method="post">
+                <input type="submit" value="Cart"/>
             </form>
         </td>
-
-
     </tr>
 </table>
 -->
-<div>
 
-        <span th:if="${showPrev}">
-            <a th:href="'/?page=' + ${currentPage-1}" th:text="Previous"></a>
-        </span>
+<div>
+     <span th:if="${showPrev}">
+        <a th:href="'/?page=' + ${currentPage-1}" th:text="Previous"></a>
+    </span>
 
     <span th:each="page : ${pages}">
-            <span th:if="${currentPage == page}" th:text="${page}"></span>
+        <span th:if="${currentPage == page}" th:text="${page}"></span>
             <a th:if="${currentPage != page}" th:href="'/?page=' + ${page}" th:text="${page}"></a>
         </span>
-
     <span th:if="${showNext}">
             <a th:href="'/?page=' + ${currentPage+1}" th:text="Next"></a>
-        </span>
+    </span>
 </div>
 
 </body>

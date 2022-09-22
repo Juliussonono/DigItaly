@@ -11,6 +11,9 @@
 <a th:href="@{/}" >
     <button>Home </button>
 </a>
+<a th:href="@{/login}" >
+    <button>Log In </button>
+</a>
 
 <a th:href="@{/cart}" >
     <button>Cart </button>
@@ -20,14 +23,14 @@
 <h1> Welcome to DigItaly's club!</h1>
 <h4>Please fill in your information below:</h4>
 
-<form action="/registerUser" method="post" th:object="${customer}">
+<form action="/register" method="post" th:object="${customer}">
     <div>Username: <input type="text" name="username" th:field="*{username}"></div>
     <div>Password: <input type="password" name="password" th:field="*{password}"></div> <!--add if-statement to this based on verification -->
     <!-- Verify password: <input type="password" name="password"> -->
     <div>First name: <input type="text" name="firstName" th:field="*{firstName}"></div>
     <div>Last name: <input type="text" name="lastName" th:field="*{lastName}"></div>
     <div>Email: <input type="text" name="email" th:field="*{email}"> </div><!--add if-statement to this based on verification -->
-    <div>Adress: <input type="text" name="adress" th:field="*{adress}"></div>
+    <div>Adress: <input type="text" name="adress" th:field="*{address}"></div>
     <!--Verify email: <input type="text" name="email"> -->
 
     <input type="submit" value="Save Details">

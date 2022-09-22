@@ -16,3 +16,5 @@ INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Chokladpralin', 'Perugi
 INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Pasta Fettuccine', 'Rustichella d Abruzzo', 46,'id16-rustichella-d-abruzzo-aggpasta-fettuccine-250g-1.jpg');
 INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Pasta Rigatoni', 'Rustichella d Abruzzo', 54,'id17-rustichella-d-abruzzo-pasta-rigatoni-500g-1.jpg');
 INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Pasta Spaghetti', 'Rustichella d Abruzzo', 24,'id18-rustichella-d-abruzzo-pasta-spaghetti-500g-1.jpg');
+
+insert into customer (username, first_name, last_name, email, password, address) values ('userDemo', 'Giorgio', 'Italiano', 'email@email.com', '123', 'Stockholm');

@@ -42,15 +42,15 @@ public class DigItalyController {
         return "profile";
     }
 
-    @GetMapping ("/registerUser")
+    @GetMapping ("/register")
     public String registerUser(Model model) {
         Customer customer = new Customer();
         model.addAttribute("customer", customer);
 
-        return "registerUser";
+        return "registerCustomer";
     }
 
-    @PostMapping("/registerUser")
+    @PostMapping("/register")
     public String registerUserPost(@ModelAttribute Customer customer) { //customerRepository must be added as input parameter
         customerRepository.save(customer);
 

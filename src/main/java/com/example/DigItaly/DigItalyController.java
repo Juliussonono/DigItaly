@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class DigItalyController {
@@ -22,21 +24,8 @@ public class DigItalyController {
     ProductRepository productRepository;
 
     @Autowired
-    ProfileCustomerRepository customerRepository;
+    CustomerRepository customerRepository;
 
-/*
-    @GetMapping ("/cart/{id}")
-    public String cart(Model model, @PathVariable Integer id, HttpSession session) {
-        // Now it resets the cart each time, have to add if a cart in the session exists. If null make new, otherwise add to existing.
-        Product product = productRepository.findById(id).get();
-        model.addAttribute(product);
-        List<Product> cart = new ArrayList<Product>();
-        cart.add(product);
-        session.setAttribute("cart", cart);
-        return "cart";
-    }
-
- */
 
     @PostMapping ("/cart/{id}")
     public String cart(Model model, @PathVariable Integer id, HttpSession session) {
@@ -82,19 +71,17 @@ public class DigItalyController {
         return "profile";
     }
 
-    @GetMapping ("/registerUser")
+    @GetMapping ("/register")
     public String registerUser(Model model) {
-        ProfileCustomer customer = new ProfileCustomer();
+        Customer customer = new Customer();
         model.addAttribute("customer", customer);
 
-        return "registerUser";
+        return "registerCustomer";
     }
 
-    @PostMapping("/registerUser")
-    public String registerUserPost(@ModelAttribute ProfileCustomer customer) { //customerRepository must be added as input parameter
-        customerRepository.addProfileCustomers(customer);
-        System.out.println(customer.getFirstName());
-        System.out.println(customer.getUsername());
+    @PostMapping("/register")
+    public String registerUserPost(@ModelAttribute Customer customer) { //customerRepository must be added as input parameter
+        customerRepository.save(customer);
 
         // customerRepository.add(customer); ---> kunden ska läggas in i customerRepository för att lista alla kunder
         return "redirect:/login";

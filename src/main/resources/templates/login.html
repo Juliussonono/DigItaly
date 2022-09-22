@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="stylesheet" href="../Images1/formStyling.css">
     <meta charset="UTF-8">
     <title>Login to "My pages"/My account</title>
 </head>
 <body>
-<form th:action="@{/}" method="post">
-    <input type="button" value="Home"/>
-</form>
+
+<a th:href="@{/}" >
+    <button>Home </button>
+</a>
 
 <!--<form th:action="@{/cart}" method="post">
     <input type="button" value="Cart"/>
@@ -20,7 +22,7 @@
     <input type="submit">
 
     <div>
-    <a href="/registerUser">No account? Register here</a>
+    <a href="/register">No account? Register here</a>
     </div>
 
 

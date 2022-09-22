@@ -1,8 +1,20 @@
-INSERT INTO  PRODUCT (NAME, BRAND, PRICE, IMAGE) VALUES('Parmigiano Reggiano', 'Michelangelo', 49.00, 'id1-parmigiano.jpg');
-INSERT INTO  PRODUCT (NAME, BRAND, PRICE, IMAGE) VALUES('Gelato Al Cioccolato', 'GROM', 79,'id2-grom-gelato.jpg');
-INSERT INTO  PRODUCT (NAME, BRAND, PRICE, IMAGE) VALUES('Italiensk Chokladglass', 'Lejonet & Björnet', 55,'id3-Lejonet&Björnen.jpg');
-INSERT INTO  PRODUCT (NAME, BRAND, PRICE, IMAGE) VALUES('Nougat Amaretti', 'DigItaly', 39,'id4-amaretti-nougat.jpg');
-INSERT INTO  PRODUCT (NAME, BRAND, PRICE, IMAGE) VALUES('Pasta', 'Ambris', 39,'id5-ambris-italien.jpg');
-INSERT INTO  PRODUCT (NAME, BRAND, PRICE, IMAGE) VALUES('Gianduiotti Cioccolato', 'Sorini', 119,'id6-gianduiotti-.chocolate.jpg');
-INSERT INTO  PRODUCT (NAME, BRAND, PRICE, IMAGE) VALUES('Vetemjöl', 'Caputo', 55,'id7-caputo-vetemjol-00-pizzeria-1kg-0.jpg');
-INSERT INTO  PRODUCT (NAME, BRAND, PRICE, IMAGE) VALUES('Ferrero Rocher', 'DigItaly', 79,'id8-ferrero-rocher-200-g-2.jpg');
+insert into product (NAME, BRAND, PRICE, IMAGE) VALUES('Parmigiano Reggiano', 'Michelangelo', 49.00, 'id1-parmigiano.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Gelato Al Cioccolato', 'GROM', 79,'id2-grom-gelato.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Italiensk Chokladglass', 'Lejonet & Björnet', 55,'id3-Lejonet&Björnen.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Nougat Amaretti', 'DigItaly', 39,'id4-amaretti-nougat.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Pasta', 'Ambris', 39,'id5-ambris-italien.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Gianduiotti Cioccolato', 'Sorini', 119,'id6-gianduiotti-.chocolate.jpg');
+INSERT INTO product (NAME, BRAND, PRICE, IMAGE) VALUES('Vetemjöl', 'Caputo', 55,'id7-caputo-vetemjol-00-pizzeria-1kg-0.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Ferrero Rocher', 'DigItaly', 79,'id8-ferrero-rocher-200-g-2.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('OLIO EXTRAVERGINE DI OLIVA', 'Lamantea', 169,'id9-lamantea_apelsin.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('GREEN OLIVES', 'MADAMA OLIVA', 45,'id10-madama-oliva-castelvetrano-med-karna-sicilien-300-g-1.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('PIZZA SAUCE', 'MUTTI', 23,'id11-mutti-tomater-pizzasas-400g-1.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('TOMATPURÉ', 'MUTTI', 43,'id12-mutti-tomatpure-dubbelkoncentrerad-200g-1.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Cremino Cuadro Classico - Choklad', 'NOVI', 35,'id13-novicreminoclassicoquadro.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Gianduiotti - Choklad med hasselnöt', 'NOVI', 46,'id14-novigianduiotto.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Chokladpralin', 'Perugina Baci', 119,'id15-perugina_baci.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Pasta Fettuccine', 'Rustichella d Abruzzo', 46,'id16-rustichella-d-abruzzo-aggpasta-fettuccine-250g-1.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Pasta Rigatoni', 'Rustichella d Abruzzo', 54,'id17-rustichella-d-abruzzo-pasta-rigatoni-500g-1.jpg');
+INSERT INTO  product (NAME, BRAND, PRICE, IMAGE) VALUES('Pasta Spaghetti', 'Rustichella d Abruzzo', 24,'id18-rustichella-d-abruzzo-pasta-spaghetti-500g-1.jpg');
+
+insert into customer (username, first_name, last_name, email, password, address) values ('userDemo', 'Giorgio', 'Italiano', 'email@email.com', '123', 'Stockholm');

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"></meta>
     <title>Products</title>
@@ -22,13 +22,17 @@
     <p th:text="${product.brand}"></p>
     <p th:text="${product.price}"></p>
     <p><img th:src="@{/Images1/} + ${product.image}" width="100"></p>
-    <p select name="Quantity"><select>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+
+ <p select name="Quantity">
+        <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
     </select></p>
+
+
     <td>
         <form th:action="'/cart/' + ${product.id}" method="post">
             <input type="submit" value="Cart"/>

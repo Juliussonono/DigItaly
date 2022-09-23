@@ -10,6 +10,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class DigItalyController {
@@ -47,6 +48,17 @@ public class DigItalyController {
             }
         }
         return -1;
+    }
+
+    @GetMapping ("/cart/remove/{id}")
+    public String delete(@PathVariable Integer id, HttpSession session) {
+        List<ItemQuantity> cart = (List<ItemQuantity>) session.getAttribute("cart");
+        Product product = productRepository.findById(id).get();
+        int index = this.exists(id, cart);
+        cart.remove(index);
+        session.setAttribute("cart", cart);
+
+        return "cart";
     }
 
     @GetMapping ("/login")

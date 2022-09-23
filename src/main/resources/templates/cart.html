@@ -10,27 +10,37 @@
     <tr>
         <th>Name</th>
         <th>Quantity</th>
+        <th>Price</th>
         <th>Total Price</th>
     </tr>
     <tr var="total" value="0"></tr>
     <tr th:each="item : ${session.cart}"> <!-- Didn't find item since the look ended on 21 since it was another tr -->
     <td>
-        <td align="center"><a
-                href="${pageContext.request.contextPath }/cart/remove/${item.product.id}"
+        <td align="center">
+            <a th:href="'/cart/remove/' + ${item.product.id}"
                 onclick="return confirm('Are you sure you want to remove this item?')">Remove</a>
         </td>
         <td th:text="${item.product.name}"></td>
         <td th:text="${item.quantity}"></td>
+        <td th:text="${item.product.price}"></td>
         <td th:text="${item.product.price * item.quantity}"></td>
     </td>
-        <td><img th:src="@{/Images1/} + ${item.product.image}" width="100"></td>
+        <td>
+            <img th:src="@{/Images1/} + ${item.product.image}" width="100">
+        </td>
     </tr>
+
     <!--
-    <tr>
-        <td colspan="6" align="right">Sum</td>
-        <td th:each="item : ${session.cart}" th:text="${item.product.price * item.quantity}"></td>
+    <tr th:each="item : ${session.sum}" >
+        <td th:text="{res} + ${item.quantity}"></td>
     </tr>
+    <tr th:each="item : ${session.sum}" >
+        <td th:field="${item.product.price * item.quantity}"></td>
+    </tr>
+    <td colspan="6" align="right">Sum</td>
+    <td th:text="" </td>
     -->
+
 </table>
 <br>
 <a th:href="'/'">Continue Shopping</a>

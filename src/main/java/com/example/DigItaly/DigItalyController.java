@@ -32,7 +32,7 @@ public class DigItalyController {
             List<ItemQuantity> cart = (List<ItemQuantity>) session.getAttribute("cart");
             int index = this.exists(id, cart);
             if (index == -1) {
-                cart.add(new ItemQuantity(product, 1));
+                cart.add(new ItemQuantity(product,1));
             } else {
                 int quantity = cart.get(index).getQuantity() + 1;
                 cart.get(index).setQuantity(quantity);
@@ -84,6 +84,12 @@ public class DigItalyController {
 
     @GetMapping ("/products")
     public String products() {
+        return "products";
+    }
+
+    @PostMapping("/products")
+    public String productsSubmit(@ModelAttribute Product product, Model model){
+        model.addAttribute("products", product);
         return "products";
     }
 

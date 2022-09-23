@@ -22,6 +22,8 @@
     <p th:text="${product.brand}"></p>
     <p th:text="${product.price}"></p>
     <p><img th:src="@{/Images1/} + ${product.image}" width="100"></p>
+
+    <!--
     <p select name="Quantity"><select>
         <option>1</option>
         <option>2</option>
@@ -29,10 +31,38 @@
         <option>4</option>
         <option>5</option>
     </select></p>
+    -->
     <td>
         <form th:action="'/cart/' + ${product.id}" method="post">
-            <input type="submit" value="Cart"/>
+            <input type="submit" value="Add to cart"/>
         </form>
+
+        <!--
+        <form>
+            <div>
+                <label for="quantity"> Add to cart: </label>
+                <input
+                        id="quantity"
+                        type="number"
+                        name="quantity"
+                        step="1"
+                        min="1"
+                        max="100"
+                        required />
+                <span class="validity"></span>
+            </div>
+            <div>
+                <input th:action="'/cart/add/' + ${product.id} + ${quantity}" type="submit" />
+            </div>
+        </form>
+        -->
+
+        <!--
+        <form th:action="'/cart/add/' + ${product.id}" method="post">
+            <input type="submit" value="Add multiple"/>
+        </form>
+        -->
+
     </td>
 </div>
 
@@ -64,6 +94,8 @@
     </tr>
 </table>
 -->
+
+
 
 <div>
      <span th:if="${showPrev}">

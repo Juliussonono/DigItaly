@@ -61,6 +61,22 @@ public class DigItalyController {
         return "cart";
     }
 
+    /*
+
+    @GetMapping ("/cart/add/{id}/{quant}")
+    public String addMultiple(@PathVariable Integer id, @PathVariable Integer quant, HttpSession session) {
+        List<ItemQuantity> cart = (List<ItemQuantity>) session.getAttribute("cart");
+        Product product = productRepository.findById(id).get();
+        int index = this.exists(id, cart);
+        int quantity = cart.get(index).getQuantity() + quant;
+        cart.get(index).setQuantity(quantity);
+        session.setAttribute("cart", cart);
+
+        return "cart";
+    }
+
+     */
+
     @GetMapping ("/login")
     public String login() {
         return "login";

@@ -20,6 +20,13 @@ public class DigItalyController {
     @Autowired
     CustomerRepository customerRepository;
 
+    @GetMapping("/cart")
+    public String cartLink(HttpSession session) {
+        List<ItemQuantity> cart = (List<ItemQuantity>) session.getAttribute("cart");
+        session.setAttribute("cart", cart);
+        return "cart";
+    }
+
     @PostMapping ("/cart/{id}")
     public String cart(Model model, @PathVariable Integer id, HttpSession session) {
         Product product = productRepository.findById(id).get();

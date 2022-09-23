@@ -73,7 +73,6 @@ public class DigItalyController {
 
         return "cart";
     }
-
      */
 
     @GetMapping ("/login")

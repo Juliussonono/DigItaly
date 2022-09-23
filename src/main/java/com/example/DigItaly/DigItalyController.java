@@ -77,8 +77,29 @@ public class DigItalyController {
      */
 
     @GetMapping ("/login")
-    public String login() {
+    public String login(Model model) {
+        Customer customerLoggingIn = new Customer();
+        String username="";
+        String password="";
+        model.addAttribute("username", username);
+        model.addAttribute("password", password);
+        model.addAttribute("customerLoggingIn", customerLoggingIn);
         return "login";
+    }
+    @PostMapping("/login")
+    public String checkLogIn(@ModelAttribute Customer customerLoggingIn, @RequestParam String username, @RequestParam String password){
+        Customer customerDB=  customerRepository.findByUsername(customerLoggingIn.getUsername()).get(0);
+        int id= customerDB.getId();
+        String passwordDB = customerDB.getPassword();
+        if (username.equals(customerDB.getUsername()) && password.equals(customerDB.getPassword())) {
+            customerLoggingIn=customerDB;
+            System.out.println("Customer: " + customerDB.getUsername() +" with ID: " + customerDB.getId() + " is logged in.");
+            return "redirect:/";
+        } else {
+            System.out.println("Wrong username or password. Try again! ");
+            return "login";
+        }
+
     }
 
     @GetMapping ("/products")

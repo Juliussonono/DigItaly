@@ -8,6 +8,9 @@ import java.util.List;
 public interface CustomerRepository extends CrudRepository<Customer,Integer> {
     List<Customer> findAll();
 
+    List<Customer> findByUsername(String username);
+
+
     /*
     private List<ProfileCustomer> profileCustomers;
     public ProfileCustomerRepository() {

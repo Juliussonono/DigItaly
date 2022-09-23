@@ -6,9 +6,17 @@
     <title>ProfileCustomer</title>
 </head>
 <body>
-<h1 ProfileCustomer></h1>
+<div class="header"><img src="../Images1/digitaly.jpg" width="150" height="100"> </div>
+<a th:href="@{/}" >
+    <button>Home </button>
+</a>
 
-<form th:action="'/customerProfile/'+ ${id}" method="post" th:object="${customer}">
+<h1> My Account</h1>
+<h6 th:action="'/ProfileCustomer/'+ ${id}" method="post" th:object="${customer}">Customer id:
+    <p  name="id" th:field="*{id}"  > </p>
+</h6>
+
+<form th:action="'/ProfileCustomer/'+ ${id}" method="post" th:object="${customer}">
     <div>Username: <input type="text" name="username" th:field="*{username}"></div>
     <div>Password: <input type="password" name="password" th:field="*{password}"></div> <!--add if-statement to this based on verification -->
     <!-- Verify password: <input type="password" name="password"> -->

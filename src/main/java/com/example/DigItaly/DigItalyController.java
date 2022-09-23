@@ -100,7 +100,7 @@ public class DigItalyController {
         if (username.equals(customerDB.getUsername()) && password.equals(customerDB.getPassword())) {
             customerLoggingIn=customerDB;
             System.out.println("Customer: " + customerDB.getUsername() +" with ID: " + customerDB.getId() + " is logged in.");
-            return "redirect:/";
+            return "redirect:/ProfileCustomer/"+id;
         } else {
             System.out.println("Wrong username or password. Try again! ");
             return "login";

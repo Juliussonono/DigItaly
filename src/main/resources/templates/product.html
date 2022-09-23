@@ -25,6 +25,10 @@
     <th th:text="${product.price}"></th>
   </tr>
   <tr>
+    <p><img th:src="@{/Images1/} + ${product.image}" width="100"></p>
+  </tr>
+
+  <tr>
     <form th:action="'/cart/' + ${product.id}" method="post">
       <input type="submit" value="Cart"/>
     </form>
